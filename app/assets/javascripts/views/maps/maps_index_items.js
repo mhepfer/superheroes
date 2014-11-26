@@ -5,38 +5,31 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
 	initialize: function(){
 		this.map = this.model
 		this.markers = this.collection
-		this.addPins()
+		this.listenTo(this.collection, "sync", this.placeMarkers)
 	},
 
-	addPins: function() {
-  	this.createMarkers();
-  	this.placeMarkers();
-	},
+  placeMarkers: function(markers) {
 
-	createMarkers: function() {
-  	this.markers = [
-      ['London Eye, London', 51.503454,-0.119562],
-      ['Palace of Westminster, London', 51.499633,-0.124755]
-  	];
-  },
+  	var that = this;
 
-  placeMarkers: function() {
-
-  // Loop through our array of markers & place each one on the map  
-  	for( i = 0; i < this.markers.length; i++ ) {
-      var position = new google.maps.LatLng(this.markers[i][1], this.markers[i][2]);
+  // Loop through our markers & place each one on the map  
+  	this.markers.each( function(marker) {
+  		var pos = marker.get('location')
+  		pos = pos.substring(1, pos.length - 1)
+  		pos = pos.split(",")
+      var position = new google.maps.LatLng(pos[0], pos[1]);
         var marker = new google.maps.Marker({
           position: position,
-          map: this.map,
-          title: this.markers[i][0]
+          map: that.map,
+          // title: String(marker.get('id'))
         });
         
-        this.createWindowContent(marker, i)
+        that.createWindowContent(marker)
 
         google.maps.event.addListener(marker, 'click', function() {
     			this.infoWindow.open(this.map, marker);
   			}.bind(this));
-  		}
+  		})
  	},
 
  	createWindowContent: function( marker ) {
