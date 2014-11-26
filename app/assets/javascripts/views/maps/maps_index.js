@@ -2,6 +2,10 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
 
   template: JST['maps/index'],
 
+  initialize: function() {
+  	this.sightings = this.collection
+  },
+
   render: function() {
   	var newTemplate = this.template();
   	this.$el.html(newTemplate);
@@ -26,6 +30,11 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
   	}
 
   	this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions)
+  	
+  	for (var i = 0; i < this.sightings.length; i++) {
+  		console.log(this.sightings[i])
+  	};
+
   	this.createMarkers();
   	this.placeMarkers();
   },
