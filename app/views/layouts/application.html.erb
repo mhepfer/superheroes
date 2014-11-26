@@ -5,8 +5,12 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript"
+    			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmlyv8WSYuOR4IDEiAO4aH7oOTURuzqiI">
+  </script>
 </head>
-<body>
+<body style="height: 200px width:300px">
 
 <%= yield %>
 

@@ -7,6 +7,6 @@ window.Superhero = {
     new Superhero.Routers.Router({
     	$rootEl: $('#content')
     })
-    Backbone.history.start()
+    Backbone.history.start();
   }
 };

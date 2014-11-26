@@ -11,8 +11,9 @@ Superhero.Routers.Router = Backbone.Router.extend({
 	},
 
 	newMap: function() {
-		var mapView = new Superhero.Views.MapsIndex()
+		var mapView = new Superhero.Views.MapsIndex({ collection: this.heroes })
 		this._swapView(mapView)
+		mapView.initialize_map();
 	},
 
 	_swapView: function(view){
