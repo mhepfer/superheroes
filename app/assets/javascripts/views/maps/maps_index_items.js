@@ -17,23 +17,23 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
   		var pos = marker.get('location')
   		pos = pos.substring(1, pos.length - 1)
   		pos = pos.split(",")
+  		//wishlist- marker.get('latitude'), marker.get('longitude')
       var position = new google.maps.LatLng(pos[0], pos[1]);
-        var gmarker = new google.maps.Marker({
+        var gMarker = new google.maps.Marker({
           position: position,
           map: that.map,
         });
+
+        that.content = that.template({ marker: marker })
+        that.infoWindow = new google.maps.InfoWindow({ content: that.content })
+
+        google.maps.event.addListener(gMarker, 'click', function() {
+        	console.log("click!")
+        	console.log(gMarker)
+          that.infoWindow.open(that.map, gMarker);
+    		});
         
-        that.createWindowContent(marker)
-
-        google.maps.event.addListener(gmarker, 'click', function() {
-    			that.infoWindow.open(this.map, gmarker);
-  			});
   		})
- 	},
-
- 	createWindowContent: function( marker ) {
- 		var content = this.template({ marker: marker })
- 		this.infoWindow = new google.maps.InfoWindow({ content: content });
  	},
 
 
