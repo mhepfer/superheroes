@@ -18,17 +18,16 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
   		pos = pos.substring(1, pos.length - 1)
   		pos = pos.split(",")
       var position = new google.maps.LatLng(pos[0], pos[1]);
-        var marker = new google.maps.Marker({
+        var gmarker = new google.maps.Marker({
           position: position,
           map: that.map,
-          // title: String(marker.get('id'))
         });
         
         that.createWindowContent(marker)
 
-        google.maps.event.addListener(marker, 'click', function() {
-    			this.infoWindow.open(this.map, marker);
-  			}.bind(this));
+        google.maps.event.addListener(gmarker, 'click', function() {
+    			that.infoWindow.open(this.map, gmarker);
+  			});
   		})
  	},
 
