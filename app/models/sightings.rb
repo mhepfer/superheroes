@@ -20,4 +20,8 @@ class Sightings < ActiveRecord::Base
 		foreign_key: :heroId,
 		primary_key: :id
 	)
+
+	has_many(
+		:members,
+	)
 end
