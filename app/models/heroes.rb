@@ -10,4 +10,11 @@
 
 class Heroes < ActiveRecord::Base
 	validates :name, presence: true
+
+	has_many(
+		:sightings,
+		class_name: "sightings",
+		foreign_key: :heroId,
+		primary_key: :id
+	)
 end
