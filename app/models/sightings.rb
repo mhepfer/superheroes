@@ -21,7 +21,4 @@ class Sightings < ActiveRecord::Base
 		primary_key: :id
 	)
 
-	has_many(
-		:members,
-	)
 end
