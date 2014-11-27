@@ -1,0 +1,1 @@
+json.array! @heroes, partial: 'api/heroes/hero', as: :hero

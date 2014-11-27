@@ -1,1 +1,1 @@
-json.extract! sighting, :id, :heroId, :location, :time, :description, :created_at, :updated_at
+json.extract! sighting, :id, :heroId, :latitude, :longitude, :time, :description, :created_at, :updated_at
