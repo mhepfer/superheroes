@@ -14,11 +14,10 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
 
   // Loop through our markers & place each one on the map  
   	this.markers.each( function(marker) {
-  		var pos = marker.get('location')
-  		pos = pos.substring(1, pos.length - 1)
-  		pos = pos.split(",")
-  		//wishlist- marker.get('latitude'), marker.get('longitude')
-      var position = new google.maps.LatLng(pos[0], pos[1]);
+  		var lat = marker.get('latitude')
+  		var longitude = marker.get('longitude')
+
+      var position = new google.maps.LatLng(lat, longitude);
       var gMarker = new google.maps.Marker({
         position: position,
         map: that.map,

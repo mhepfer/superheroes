@@ -6,10 +6,11 @@
 #  name       :text
 #  created_at :datetime
 #  updated_at :datetime
+#  bio        :string(255)
 #
 
 class Heroes < ActiveRecord::Base
-	validates :name, presence: true
+	validates :name, :bio, presence: true
 
 	has_many(
 		:sightings,

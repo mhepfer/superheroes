@@ -4,15 +4,16 @@
 #
 #  id          :integer          not null, primary key
 #  heroId      :integer          not null
-#  location    :text             not null
 #  time        :text             not null
 #  description :text             not null
 #  created_at  :datetime
 #  updated_at  :datetime
+#  latitude    :integer
+#  longitude   :integer
 #
 
 class Sightings < ActiveRecord::Base
-	validates :id, :heroId, :location, :time, :description, presence: true
+	validates :id, :heroId, :latitude, :longitude, :time, :description, presence: true
 
 	belongs_to(
 		:superhero,

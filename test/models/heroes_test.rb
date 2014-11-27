@@ -6,6 +6,7 @@
 #  name       :text
 #  created_at :datetime
 #  updated_at :datetime
+#  bio        :string(255)
 #
 
 require 'test_helper'
