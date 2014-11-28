@@ -17,7 +17,7 @@ class Sightings < ActiveRecord::Base
 
 	belongs_to(
 		:superhero,
-		class_name: "heroes",
+		class_name: "Heroes",
 		foreign_key: :heroId,
 		primary_key: :id
 	)

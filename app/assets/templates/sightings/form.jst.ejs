@@ -1,0 +1,22 @@
+<form>
+<label for="hero">Hero Spotted:</label><br>
+<select name='hero'>
+	<% heroes.each(function(hero){ %>
+		<option value="<%=hero.name%>"><%=hero.name%></option>
+	<% }) %>
+</select>
+
+<label for="time">Date and Time:</label><br>
+<input type="datetime-local" name="time">
+
+<textarea name='description' id='description'><%= sighting.escape('description') %></textarea><br>
+
+<input type='text' name='longitude' id='longitude' value='<%= sighting.escape('longitude') %>'><br>
+
+
+<input type='text' name='latitude' id='latitude' value='<%= sighting.escape('latitude') %>'><br>
+
+<button id="createSighting">Submit</button>
+
+<a href='#/'>Back</a>
+</form>

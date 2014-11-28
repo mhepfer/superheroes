@@ -7,7 +7,8 @@ Superhero.Routers.Router = Backbone.Router.extend({
 	},
 
 	routes:{
-		"":"newMap"
+		"":"newMap",
+		"sightings/new": "newSighting"
 	},
 
 	newMap: function() {
@@ -19,6 +20,12 @@ Superhero.Routers.Router = Backbone.Router.extend({
 			collection: this.sightings,
 			model: this.map 
 		})
+	},
+
+	newSighting: function() {
+		this.sightings.fetch()
+		var sightingView = new Superhero.Views.SightingForm({ collection: this.sightings })
+		this.$rootEl.html(sightingView.render().$el)
 	},
 
 	_swapView: function(view){

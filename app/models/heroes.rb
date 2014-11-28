@@ -14,7 +14,7 @@ class Heroes < ActiveRecord::Base
 
 	has_many(
 		:sightings,
-		class_name: "sightings",
+		class_name: "Sightings",
 		foreign_key: :heroId,
 		primary_key: :id
 	)
