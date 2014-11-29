@@ -8,8 +8,8 @@
 #  description :text             not null
 #  created_at  :datetime
 #  updated_at  :datetime
-#  latitude    :integer
-#  longitude   :integer
+#  latitude    :float            not null
+#  longitude   :float            not null
 #
 
 require 'test_helper'
