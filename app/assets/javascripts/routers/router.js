@@ -20,11 +20,17 @@ Superhero.Routers.Router = Backbone.Router.extend({
 			collection: this.sightings,
 			model: this.map 
 		})
+
+		this.newSighting()
 	},
 
 	newSighting: function() {
+		this.sighting = new Superhero.Models.Sighting()
 		this.sightings.fetch()
-		var sightingView = new Superhero.Views.SightingForm({ collection: this.sightings })
+		var sightingView = new Superhero.Views.SightingForm({ 
+			model: this.sighting, 
+			collection: this.sightings
+		})
 		this.$rootEl.html(sightingView.render().$el)
 	},
 

@@ -1,7 +1,7 @@
 Superhero.Views.SightingForm = Backbone.View.extend({
 	tagName: 'form',
 
-	template: JST["sightings/sightingForm"],
+	template: JST["sightings/form"],
 
 	events: {
 		"click button .createSighting": "submit"
