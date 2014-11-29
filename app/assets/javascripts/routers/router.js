@@ -31,7 +31,7 @@ Superhero.Routers.Router = Backbone.Router.extend({
 			model: this.sighting, 
 			collection: this.sightings
 		})
-		this.$rootEl.html(sightingView.render().$el)
+		this.$rootEl.append(sightingView.render().$el)
 	},
 
 	_swapView: function(view){
