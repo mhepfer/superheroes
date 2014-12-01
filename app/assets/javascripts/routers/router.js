@@ -1,7 +1,8 @@
 Superhero.Routers.Router = Backbone.Router.extend({
 
 	initialize: function(options) {
-		this.$rootEl = options.$rootEl
+		this.$rootEl = options.$rootEl;
+		this.$formEl = options.$formEl;
 		this.sightings = new Superhero.Collections.Sightings()
 		this.heroes = new Superhero.Collections.Heroes()
 	},
@@ -11,29 +12,35 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		"sightings/new": "newSighting"
 	},
 
-	newMap: function() {
+	newMap: function(callback) {
 		this.sightings.fetch()
-		var mapView = new Superhero.Views.MapsIndex({ 
+		this._mapView = new Superhero.Views.MapsIndex({ 
 			collection: this.sightings
 		})
-		this._swapView(mapView)
-		this.map = mapView.initialize_map();
+		this._swapView(this._mapView)
+
+		this.map = this._mapView.initialize_map();
 		new Superhero.Views.MapsIndexItems({ 
 			collection: this.sightings,
 			model: this.map 
 		})
 
-		// this.newSighting()
+		callback && callback();
 	},
 
-	newSighting: function() {
+	newSighting: function(queryData) {
+		if (!this._mapView) {
+			this.newMap(this.newSighting.bind(this));
+			return;
+		}
+
 		this.sighting = new Superhero.Models.Sighting()
 		this.sightings.fetch()
 		var sightingView = new Superhero.Views.SightingForm({ 
 			model: this.sighting, 
 			collection: this.sightings
 		})
-		this.$rootEl.append(sightingView.render().$el)
+		this.$formEl.html(sightingView.render().$el);
 	},
 
 	_swapView: function(view){

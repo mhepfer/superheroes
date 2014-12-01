@@ -7,9 +7,9 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
     this.$rootEl = this.$root
   },
 
-  // events: {
-  //  "click .showForm": "newSighting"
-  // },
+  events: {
+   "click .showForm": "newSighting"
+  },
 
   render: function() {
   	var newTemplate = this.template();
@@ -63,96 +63,74 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
   {
     "featureType": "landscape",
     "stylers": [
-      {
-        "color": "#08304b"
-      },
+      { "color": "#08304b" },
     ]
   },
   {
     "featureType": "road.highway",
     "stylers": [
-      {
-        "hue": "#00FEFF"
-      },
-      {
-        "saturation": -33.33333333333334
-      },
-      {
-        "lightness": 41.400000000000006
-      },
-      {
-        "gamma": 1
-      }
+      { "hue": "#00FEFF" },
+      { "saturation": -33.33333333333334 },
+      { "lightness": 41.400000000000006 },
+      { "gamma": 1 }
     ]
   },
   {
     "featureType": "road.arterial",
     "stylers": [
-      {
-        "color": "#000000"
-      }
+      { "color": "#000000" }
     ]
   },
   {
     "featureType": "road.local",
     "stylers": [
-      {
-        "hue": "#00FEFF"
-      },
-      {
-        "saturation": -53.84615384615387
-      },
-      {
-        "lightness": -34.66666666666667
-      },
-      {
-        "gamma": 1
-      }
+      { "hue": "#00FEFF" },
+      { "saturation": -53.84615384615387 },
+      { "lightness": -34.66666666666667 },
+      { "gamma": 1 }
     ]
   },
   {
     "featureType": "water",
     "stylers": [
-      {
-        "color": "#364C5A"
-      },
+      { "color": "#364C5A" },
     ]
   },
   {
     "featureType": "poi",
     "stylers": [
-      {
-        "color":"36150A"
-      }
+      { "color":"36150A" }
     ]
   },
   {
     "featureType": "administrative",
     "elementType": "geometry.fill",
     "stylers": [
-      {
-        "color": "#000000"
-      }
+      { "color": "#000000" }
     ]
   },
   {
     "featureType": "administrative",
     "elementType": "geometry.stroke",
     "stylers": [
-      {
-        "color": "#144b53"
-      },
-      {
-        "lightness": 14
-      },
-      {
-        "weight": 1.4
-      }
+      { "color": "#144b53" },
+      { "lightness": 14 },
+      { "weight": 1.4 }
     ]
   }
   
   ]
 
   },
+
+  // newSighting: function() {
+  //  this.sighting = new Superhero.Models.Sighting()
+  //  this.sightings.fetch()
+  //  var sightingView = new Superhero.Views.SightingForm({ 
+  //    model: this.sighting, 
+  //    collection: this.sightings
+  //  })
+  //  this.$el.append(sightingView.render().$el)
+  // },
 
 });

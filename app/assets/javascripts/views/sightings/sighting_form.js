@@ -27,5 +27,6 @@ Superhero.Views.SightingForm = Backbone.View.extend({
 		} else {
 			this.model.save({}, { success: success })
 		}
+		//remove form from page...?
 	}
 })
