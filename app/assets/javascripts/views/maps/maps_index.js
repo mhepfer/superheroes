@@ -7,10 +7,6 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
     this.$rootEl = this.$root
   },
 
-  events: {
-   "click .showForm": "newSighting"
-  },
-
   render: function() {
   	var newTemplate = this.template();
   	this.$el.html(newTemplate);
@@ -122,15 +118,5 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
   ]
 
   },
-
-  // newSighting: function() {
-  //  this.sighting = new Superhero.Models.Sighting()
-  //  this.sightings.fetch()
-  //  var sightingView = new Superhero.Views.SightingForm({ 
-  //    model: this.sighting, 
-  //    collection: this.sightings
-  //  })
-  //  this.$el.append(sightingView.render().$el)
-  // },
 
 });
