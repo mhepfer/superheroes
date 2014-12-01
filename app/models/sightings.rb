@@ -13,7 +13,7 @@
 #
 
 class Sightings < ActiveRecord::Base
-	validates :id, :heroId, :latitude, :longitude, :time, :description, presence: true
+	validates :heroId, :latitude, :longitude, :time, :description, presence: true
 
 	belongs_to(
 		:superhero,

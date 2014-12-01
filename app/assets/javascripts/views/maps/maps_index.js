@@ -6,7 +6,7 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
   	this.sightings = this.collection
     this.$rootEl = this.$root
   },
-
+  
   render: function() {
   	var newTemplate = this.template();
   	this.$el.html(newTemplate);
@@ -26,9 +26,9 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
 
   	this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions)
   	
-  	for (var i = 0; i < this.sightings.length; i++) {
-  		console.log(this.sightings[i])
-  	};
+  	// for (var i = 0; i < this.sightings.length; i++) {
+  	// 	console.log(this.sightings[i])
+  	// };
 
     // Create the search box and link it to the UI element.
     // var input = /** @type {HTMLInputElement} */(

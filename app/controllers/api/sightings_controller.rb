@@ -8,16 +8,20 @@ class Api::SightingsController < ApplicationController
 		render :show
 	end
 
-	def new
-		@sighting = Sightings.new(params)
+	def create
+		@sighting = Sightings.new(sighting_params)
 		if @sighting.save!
-			render :show
+			render 'show'
 		else
 			render json: @sighting.errors.full_messages
 		end
 	end
 
-	def sightingParams
-		params.require(:sightings).permit(:heroId, :time, :description, :latitude, :longitude)
+	def sighting_params
+		if params[:sighting]
+			params.require(:sighting).permit(:heroId, :time, :description, :latitude, :longitude)
+		else
+			params.require(:sightings).permit(:heroId, :time, :description, :latitude, :longitude)
+		end
 	end
 end
