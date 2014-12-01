@@ -4,12 +4,12 @@
 #
 #  id          :integer          not null, primary key
 #  heroId      :integer          not null
-#  time        :text             not null
 #  description :text             not null
 #  created_at  :datetime
 #  updated_at  :datetime
 #  latitude    :float            not null
 #  longitude   :float            not null
+#  time        :datetime
 #
 
 class Sightings < ActiveRecord::Base

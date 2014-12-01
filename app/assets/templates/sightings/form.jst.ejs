@@ -4,10 +4,11 @@
 <input type='text' name='heroId' id='heroId' value='<%= sighting.escape('heroId') %>'><br>
 
 <label for="time">Date and Time:</label><br>
-<input type="datetime-local" name="time">
+<input type="datetime-local" name="time" value='<%= sighting.escape('time') %>'>
+<br>
 
 <label for="description">Description:</label><br>
-<textarea name='description' id='description'><%= sighting.escape('description') %></textarea><br>
+<textarea name='description' id='description' value='<%= sighting.escape('description') %>'><%= sighting.escape('description') %></textarea><br>
 
 <label for="longitude">Longitude:</label><br>
 <input type='text' name='longitude' id='longitude' value='<%= sighting.escape('longitude') %>'><br>

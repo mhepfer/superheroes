@@ -7,4 +7,9 @@ class Api::HeroesController < ApplicationController
 		@hero = Heroes.find(params[:id])
 		render :show
 	end
+
+	def params
+		params.require(:heroes).permit(:name, :bio)
+	end
+
 end

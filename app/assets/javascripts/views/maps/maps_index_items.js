@@ -5,7 +5,7 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
 	initialize: function(){
 		this.map = this.model
 		this.markers = this.collection
-		this.listenTo(this.collection, "sync", this.placeMarkers)
+		this.listenTo(this.collection, "sync add", this.placeMarkers)
 	},
 
   placeMarkers: function(markers) {

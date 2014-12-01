@@ -11,9 +11,9 @@ class Api::SightingsController < ApplicationController
 	def new
 		@sighting = Sightings.new(params)
 		if @sighting.save!
-			render json: @sighting
+			render :show
 		else
-			render json: @sighting
+			render json: @sighting.errors.full_messages
 		end
 	end
 
