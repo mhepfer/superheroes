@@ -41,7 +41,7 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
         map: that.map,
       });
 
-      that.map.addOverlay(gMarker); //adding the marker to the map
+      // that.map.addOverlay(gMarker); //adding the marker to the map
       //JQuery function to assign the lat and long to the values of textboxes.
       $('#latitude').val(lat);
       $('#longitude').val(longitude);
