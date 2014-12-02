@@ -41,7 +41,6 @@ Superhero.Routers.Router = Backbone.Router.extend({
 			collection: this.sightings
 		})
 
-			// heroes: this.heroes
 		this.$formEl.html(sightingView.render().$el);
 	},
 

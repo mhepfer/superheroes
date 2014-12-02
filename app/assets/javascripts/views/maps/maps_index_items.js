@@ -45,6 +45,7 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
     var that = this
 
     google.maps.event.addListener(that.map, 'click', function(event) {
+      Backbone.history.navigate( "/sightings/new", { trigger: true })
       var lat = event.latLng.lat(); //Function to extract latitude
       var longitude = event.latLng.lng(); //Function to extract longitude
       var position = new google.maps.LatLng(lat, longitude)

@@ -3,10 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #newSightingForm {
+	position: absolute;
+	background: #364C5A;
+	top: 80px;
+	right: 10px;
+	z-index: 81;
+	padding: 10px;
+}
+/*
+#sightingFormBackground {
 	background: #364C5A;
 	position: absolute;
 	top: 80px;
 	right: 10px;
 	z-index: 99;
 	padding: 10px;
-}
+	opacity: 0.8;
+	border-radius: 5px;
+	z-index: 80;
+}*/
