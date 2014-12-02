@@ -4,7 +4,6 @@ Superhero.Views.SightingForm = Backbone.View.extend({
 	initialize: function(options) {
 		this.model = options.model,
 		this.collection = options.collection
-		// this.heroes = options.heroes
 	},
 
 	template: JST["sightings/form"],
@@ -14,7 +13,10 @@ Superhero.Views.SightingForm = Backbone.View.extend({
 	},
 
 	render: function() {
-		var renderedContent = this.template({ sighting: this.model })
+		var renderedContent = this.template({ 
+			sighting: this.model, 
+			heroes: Superhero.Collections.heroes 
+		})
 		this.$el.html(renderedContent)
 		return this
 	},
@@ -30,6 +32,7 @@ Superhero.Views.SightingForm = Backbone.View.extend({
 
 		if(this.model.isNew()){
 			this.collection.create(this.model.attributes, { success: success })
+
 		} else {
 			this.model.save({}, { success: success })
 		}

@@ -4,7 +4,7 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		this.$rootEl = options.$rootEl;
 		this.$formEl = options.$formEl;
 		this.sightings = new Superhero.Collections.Sightings()
-		this.heroes = new Superhero.Collections.Heroes()
+		// this.heroes = new Superhero.Collections.Heroes()
 	},
 
 	routes:{
@@ -36,10 +36,10 @@ Superhero.Routers.Router = Backbone.Router.extend({
 
 		this.sighting = new Superhero.Models.Sighting()
 		this.sightings.fetch()
-		// this.heroes.fetch()
+
 		var sightingView = new Superhero.Views.SightingForm({ 
 			model: this.sighting, 
-			collection: this.sightings,
+			collection: this.sightings
 		})
 
 			// heroes: this.heroes
@@ -49,6 +49,7 @@ Superhero.Routers.Router = Backbone.Router.extend({
 	_swapView: function(view){
 		if(this.currentView){
 			this.currentView.remove()
+			this.$formEl.empty()
 		}
 		this.$rootEl.html(view.render().$el)
 		this.currentView = view

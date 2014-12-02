@@ -1,7 +1,12 @@
 <form class="addSighting">
 
-<label for="hero">Hero Id:</label><br>
-<input type='text' name='heroId' id='heroId' value='<%= sighting.escape('heroId') %>'><br>
+<label for="heroId">Hero Name:</label><br>
+<select name="heroId">
+	<% heroes.each(function(hero){ %>
+		<option value="<%=hero.id%>"><%=hero.escape("name")%></option>
+	<% }) %>
+</select>
+<br>
 
 <label for="time">Date and Time:</label><br>
 <input type="datetime-local" name="time" value='<%= sighting.escape('time') %>'>
