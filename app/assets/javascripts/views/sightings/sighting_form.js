@@ -4,6 +4,7 @@ Superhero.Views.SightingForm = Backbone.View.extend({
 	initialize: function(options) {
 		this.model = options.model,
 		this.collection = options.collection
+		this.listenTo(Superhero.Collections.heroes, "sync", this.render)
 	},
 
 	template: JST["sightings/form"],

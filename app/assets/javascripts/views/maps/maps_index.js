@@ -4,10 +4,6 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
 
   initialize: function() {
   	this.sightings = this.collection
-    if (!Superhero.Collections.heroes) {
-      Superhero.Collections.heroes = new Superhero.Collections.Heroes();
-      Superhero.Collections.heroes.fetch();
-    }
   },
   
   render: function() {

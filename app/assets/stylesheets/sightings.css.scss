@@ -2,23 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#newSightingForm {
-	position: absolute;
-	background: #364C5A;
-	top: 80px;
-	right: 10px;
-	z-index: 81;
-	padding: 10px;
-}
-/*
+
+
 #sightingFormBackground {
-	background: #364C5A;
+	background-color: rgba(54,76,90,0.9);
 	position: absolute;
-	top: 80px;
+	top: 90px;
 	right: 10px;
 	z-index: 99;
-	padding: 10px;
-	opacity: 0.8;
+/*	padding: 10px;*/
 	border-radius: 5px;
-	z-index: 80;
-}*/
+}
+
+#newSightingForm {
+	color: #00FEFF;;
+}

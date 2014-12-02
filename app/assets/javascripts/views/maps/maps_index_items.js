@@ -7,10 +7,34 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
 		this.markers = this.collection
 		this.listenTo(this.collection, "sync", this.placeMarkers)
     this.addListener();
+    this.$footer = window.$(footer)
     // this.listenTo(this.collection, "add", this.placeMarker)
 	},
 
-  placeMarkers: function() {
+  // sort and place markers
+  // can I pull which hero is selected from here
+
+  // sortAndPlaceMarkers: function() {
+  //   // get $selection
+  //   selectedMarkers = []
+
+  //   if($selection.attr("data-hero-id") === "all"){
+  //     selectedMarker = selectedMarkers.concat(this.markers)
+  //   } else {
+  //     var heroId = $selection.attr("data-hero-id")
+  //     selectedMarkers = []
+  //     this.markers.each( function(marker) {
+  //       if(marker.heroId === heroId){
+  //         selectedMarkers.push(marker)
+  //       }
+  //     })
+
+  //   }
+
+  //   this.placeMarkers(selectedMarkers)
+  // }
+
+  placeMarkers: function(selectedMarkers) {
   	var that = this;
 
   // Loop through our markers & place each one on the map  

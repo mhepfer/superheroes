@@ -6,7 +6,8 @@ window.Superhero = {
   initialize: function() {
     new Superhero.Routers.Router({
     	$rootEl: $(content),
-      $formEl: $(newSightingForm)
+      $formEl: $(newSightingForm),
+      $footEl: $(footer)
     })
     Backbone.history.start();
   }

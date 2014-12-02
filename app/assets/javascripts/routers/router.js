@@ -3,7 +3,10 @@ Superhero.Routers.Router = Backbone.Router.extend({
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl;
 		this.$formEl = options.$formEl;
+		this.$footEl = options.$footEl;
 		this.sightings = new Superhero.Collections.Sightings()
+
+		this.addHeroSelector()
 	},
 
 	routes:{
@@ -43,6 +46,11 @@ Superhero.Routers.Router = Backbone.Router.extend({
 
 		this.$formEl.html(sightingView.render().$el);
 	},
+
+	addHeroSelector: function() {
+		var footerView = new Superhero.Views.Footer()
+		this.$footEl.html(footerView.render().$el)
+	}
 
 	_swapView: function(view){
 		if(this.currentView){
