@@ -22,7 +22,6 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
 
   placeMarker: function(marker){
     var that = this;
-    console.log(marker)
     var lat = marker.get('latitude')
     var longitude = marker.get('longitude')
 

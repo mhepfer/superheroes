@@ -4,7 +4,6 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		this.$rootEl = options.$rootEl;
 		this.$formEl = options.$formEl;
 		this.sightings = new Superhero.Collections.Sightings()
-		// this.heroes = new Superhero.Collections.Heroes()
 	},
 
 	routes:{

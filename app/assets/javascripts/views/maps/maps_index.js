@@ -4,7 +4,6 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
 
   initialize: function() {
   	this.sightings = this.collection
-    this.$rootEl = this.$root
     if (!Superhero.Collections.heroes) {
       Superhero.Collections.heroes = new Superhero.Collections.Heroes();
       Superhero.Collections.heroes.fetch();
@@ -29,33 +28,26 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
   	}
 
   	this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions)
-  	
-  	// for (var i = 0; i < this.sightings.length; i++) {
-  	// 	console.log(this.sightings[i])
-  	// };
 
-    // Create the search box and link it to the UI element.
-    // var input = /** @type {HTMLInputElement} */(
-    //     document.getElementById('pac-input'));
-    // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    var that = this
 
-    // var searchBox = new google.maps.places.SearchBox(
-    //   /** @type {HTMLInputElement} */(input));
+    google.maps.event.addListener(that.map, 'click', function(event) {
+      var lat = event.latLng.lat(); //Function to extract latitude
+      var longitude = event.latLng.lng(); //Function to extract longitude
+      var position = new google.maps.LatLng(lat, longitude)
 
-    // Listen for the event fired when the user selects an item from the
-    // pick list. Retrieve the matching places for that item.
+      var gMarker = new google.maps.Marker({
+        position: position,
+        map: that.map,
+      });
 
-    // google.maps.event.addListener(searchBox, 'places_changed', function() {
-    //   var places = searchBox.getPlaces();
+      that.map.addOverlay(gMarker); //adding the marker to the map
+      //JQuery function to assign the lat and long to the values of textboxes.
+      $('#latitude').val(lat);
+      $('#longitude').val(longitude);
+    })
 
-    //   if (places.length == 0) {
-    //     return;
-    //   }
-    //   for (var i = 0, marker; marker = markers[i]; i++) {
-    //     marker.setMap(null);
-    //   }
-
-  	return this.map
+    return this.map
   },
 
   createStyles: function() {
