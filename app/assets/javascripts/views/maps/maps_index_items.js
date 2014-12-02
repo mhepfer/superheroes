@@ -8,38 +8,44 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
     this.addListener();
     this.$footer = window.$(footer)
     this.listenTo(this.collection, "add", this.placeMarker);
-    this.placeMarkers();
-
+    this.placeMarkers(this.markers);
+    this.gMarkers = []
 	},
+
+  events:{
+    "change select": "filterMarkers"
+  },
+
 
   filterMarkers: function() {
     this.selection = $('#hero-picker').val();
+    this.selection = parseInt( this.selection )
 
     if(this.selection !== "All"){
-      this.markers.each( function(marker) {
-        if(marker.attributes.heroId === this.selection){
-          marker.setVisible(true);
+      this.gMarkers.each( function(marker) {
+        if(gMarker.heroId === this.selection){
+          gMarker.setVisible(true);
         } else {
-          marker.setVisible(false);
+          gMarker.setVisible(false);
         }
+      })
+    } else {
+      this.gMarkers.each( function(marker){
+        gMarker.setVisible(true);
       })
     }
   },
 
   placeMarkers: function(selectedMarkers) {
 
-  	var that = this;
-
-  // Loop through our markers & place each one on the map  
+  	var that = this; 
   	this.markers.each( function(marker) {
-
-      this.placeMarker(marker);
-        
+      this.placeMarker(marker);  
   	}.bind(this))
  	},
 
   placeMarker: function(marker){
-    console.log('placingMarker')
+
     var that = this;
     var lat = marker.get('latitude')
     var longitude = marker.get('longitude')
@@ -51,6 +57,8 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
       map: that.map,
       heroId: heroId
     });
+
+    this.gMarkers.push(gMarker);
 
     that.content = that.template({ marker: marker })
 
