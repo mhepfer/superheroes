@@ -1,28 +1,36 @@
-<form class="addSighting">
+<form class="addSighting" role="form">
+	<div class="form-group">
+		<label for="heroId">Hero Name:</label><br>
+		<select name="heroId">
+			<% heroes.each(function(hero){ %>
+				<option value="<%=hero.id%>"><%=hero.escape("name")%></option>
+			<% }) %>
+		</select>
+	</div>
 
-<label for="heroId">Hero Name:</label><br>
-<select name="heroId">
-	<% heroes.each(function(hero){ %>
-		<option value="<%=hero.id%>"><%=hero.escape("name")%></option>
-	<% }) %>
-</select>
-<br>
+<div class="form-group">
+	<label for="time">Date and Time:</label><br>
+	<input type="datetime-local" name="time" value='<%= sighting.escape('time') %>'>
+	<br>
+</div>
 
-<label for="time">Date and Time:</label><br>
-<input type="datetime-local" name="time" value='<%= sighting.escape('time') %>'>
-<br>
+<div class="form-group">
+	<label for="description">Description:</label><br>
+	<textarea name='description' id='description' value='<%= sighting.escape('description') %>'><%= sighting.escape('description') %></textarea><br>
+</div>
 
-<label for="description">Description:</label><br>
-<textarea name='description' id='description' value='<%= sighting.escape('description') %>'><%= sighting.escape('description') %></textarea><br>
+<div class="form-group">
+	<label for="longitude">Longitude:</label><br>
+	<input type='text' name='longitude' id='longitude' value='<%= sighting.escape('longitude') %>'><br>
+</div>
 
-<label for="longitude">Longitude:</label><br>
-<input type='text' name='longitude' id='longitude' value='<%= sighting.escape('longitude') %>'><br>
+<div class="form-group">
+	<label for="latitude">Latitude:</label><br>
+	<input type='text' name='latitude' id='latitude' value='<%= sighting.escape('latitude') %>'><br>
+</div>
 
-<label for="latitude">Latitude:</label><br>
-<input type='text' name='latitude' id='latitude' value='<%= sighting.escape('latitude') %>'><br>
-
-<label for="pac-input">Location:</label><br>
-<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<!-- <label for="pac-input">Location:</label><br>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
 
 <button id="createSighting">Submit</button>
 

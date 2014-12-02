@@ -22,6 +22,10 @@ gem 'backbone-on-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+gem 'autoprefixer-rails'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
