@@ -29,24 +29,6 @@ Superhero.Views.MapsIndex = Backbone.View.extend({
 
   	this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions)
 
-    var that = this
-
-    google.maps.event.addListener(that.map, 'click', function(event) {
-      var lat = event.latLng.lat(); //Function to extract latitude
-      var longitude = event.latLng.lng(); //Function to extract longitude
-      var position = new google.maps.LatLng(lat, longitude)
-
-      var gMarker = new google.maps.Marker({
-        position: position,
-        map: that.map,
-      });
-
-      // that.map.addOverlay(gMarker); //adding the marker to the map
-      //JQuery function to assign the lat and long to the values of textboxes.
-      $('#latitude').val(lat);
-      $('#longitude').val(longitude);
-    })
-
     return this.map
   },
 
