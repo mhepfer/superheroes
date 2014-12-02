@@ -17,14 +17,13 @@ Superhero.Views.HeroesList = Backbone.View.extend({
   },
 
   filterMarkers: function() {
-  	console.log("change heard")
 
   	this.selection = $('#heroPicker').val();
-    this.selection = parseInt( this.selection )
 
     var that = this
 
     if(this.selection !== "All"){
+    	this.selection = parseInt( this.selection )
       _.each( gMarkers, function(gMarker) {
         if(gMarker.heroId === that.selection){
           gMarker.setVisible(true);
