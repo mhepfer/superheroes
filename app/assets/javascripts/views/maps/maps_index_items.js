@@ -9,33 +9,9 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
     this.$footer = window.$(footer)
     this.listenTo(this.collection, "add", this.placeMarker);
     this.placeMarkers(this.markers);
-    this.gMarkers = []
+    gMarkers = []
 	},
-
-  events:{
-    "change select": "filterMarkers"
-  },
-
-
-  filterMarkers: function() {
-    this.selection = $('#hero-picker').val();
-    this.selection = parseInt( this.selection )
-
-    if(this.selection !== "All"){
-      this.gMarkers.each( function(marker) {
-        if(gMarker.heroId === this.selection){
-          gMarker.setVisible(true);
-        } else {
-          gMarker.setVisible(false);
-        }
-      })
-    } else {
-      this.gMarkers.each( function(marker){
-        gMarker.setVisible(true);
-      })
-    }
-  },
-
+  
   placeMarkers: function(selectedMarkers) {
 
   	var that = this; 
@@ -58,7 +34,7 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
       heroId: heroId
     });
 
-    this.gMarkers.push(gMarker);
+    gMarkers.push(gMarker);
 
     that.content = that.template({ marker: marker })
 
