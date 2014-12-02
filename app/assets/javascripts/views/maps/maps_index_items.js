@@ -5,36 +5,29 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
 	initialize: function(){
 		this.map = this.model
 		this.markers = this.collection
-		this.listenTo(this.collection, "sync", this.placeMarkers)
     this.addListener();
     this.$footer = window.$(footer)
-    // this.listenTo(this.collection, "add", this.placeMarker)
+    this.listenTo(this.collection, "add", this.placeMarker);
+    this.placeMarkers();
+
 	},
 
-  // sort and place markers
-  // can I pull which hero is selected from here
+  filterMarkers: function() {
+    this.selection = $('#hero-picker').val();
 
-  // sortAndPlaceMarkers: function() {
-  //   // get $selection
-  //   selectedMarkers = []
-
-  //   if($selection.attr("data-hero-id") === "all"){
-  //     selectedMarker = selectedMarkers.concat(this.markers)
-  //   } else {
-  //     var heroId = $selection.attr("data-hero-id")
-  //     selectedMarkers = []
-  //     this.markers.each( function(marker) {
-  //       if(marker.heroId === heroId){
-  //         selectedMarkers.push(marker)
-  //       }
-  //     })
-
-  //   }
-
-  //   this.placeMarkers(selectedMarkers)
-  // }
+    if(this.selection !== "All"){
+      this.markers.each( function(marker) {
+        if(marker.attributes.heroId === this.selection){
+          marker.setVisible(true);
+        } else {
+          marker.setVisible(false);
+        }
+      })
+    }
+  },
 
   placeMarkers: function(selectedMarkers) {
+
   	var that = this;
 
   // Loop through our markers & place each one on the map  
@@ -46,6 +39,7 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
  	},
 
   placeMarker: function(marker){
+    console.log('placingMarker')
     var that = this;
     var lat = marker.get('latitude')
     var longitude = marker.get('longitude')

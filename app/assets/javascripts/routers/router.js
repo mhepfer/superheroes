@@ -6,7 +6,7 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		this.$footEl = options.$footEl;
 		this.sightings = new Superhero.Collections.Sightings()
 
-		this.addHeroSelector()
+		this.addHeroList()
 	},
 
 	routes:{
@@ -47,10 +47,10 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		this.$formEl.html(sightingView.render().$el);
 	},
 
-	addHeroSelector: function() {
-		var footerView = new Superhero.Views.Footer()
-		this.$footEl.html(footerView.render().$el)
-	}
+	addHeroList: function() {
+		var heroListView = new Superhero.Views.HeroesList()
+		this.$footEl.html(heroListView.render().$el)
+	},
 
 	_swapView: function(view){
 		if(this.currentView){

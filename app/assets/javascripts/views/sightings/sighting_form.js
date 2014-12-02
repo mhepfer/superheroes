@@ -93,11 +93,15 @@ Superhero.Views.SightingForm = Backbone.View.extend({
 		this.model.set(attrs);
 
 		function success() {
-			Backbone.history.navigate( "", { trigger: true })
+			Backbone.history.navigate( "", { trigger: false })
+			that.remove();
 		}
-
+		var that = this;
 		if(this.model.isNew()){
-			this.collection.create(this.model.attributes, { success: success })
+			this.model.save({}, {success: function(model){
+				that.collection.add(model);
+				success();
+			}})
 
 		} else {
 			this.model.save({}, { success: success })

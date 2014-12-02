@@ -1,0 +1,9 @@
+<div class="form-group">
+	<label for="heroId">Filter Sightings</label>
+	<select name="heroId" id="heroPicker" class="heroPicker">
+		<option>All</option>
+		<% heroes.each(function(hero){ %>
+			<option value="<%=hero.id%>"><%=hero.escape("name")%></option>
+		<% }) %>
+	</select>
+</div>
