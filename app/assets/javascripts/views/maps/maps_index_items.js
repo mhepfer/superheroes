@@ -25,11 +25,13 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
     var that = this;
     var lat = marker.get('latitude')
     var longitude = marker.get('longitude')
+    var heroId = marker.get('heroId')
 
     var position = new google.maps.LatLng(lat, longitude);
     var gMarker = new google.maps.Marker({
       position: position,
       map: that.map,
+      heroId: heroId
     });
 
     that.content = that.template({ marker: marker })
