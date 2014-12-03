@@ -27,12 +27,23 @@ Superhero.Views.SightingsIndex = Backbone.View.extend({
     	var longitude = sighting.get('longitude')
 		  var position = new google.maps.LatLng(latitude, longitude);
 			
-			if(that.map.getBounds().contains(position)){
+			if((that.map.getBounds().contains(position)) && that.isVisible(sighting)){
 				visibleSightings.push(sighting)
 			}
 		})
 
 		return visibleSightings
+	},
+
+	isVisible: function(sighting) {
+		var selection = $('#heroPicker').val();
+
+		if ( selection === "All"){
+			return true
+		} else if ( parseInt( selection ) === sighting.get( 'heroId' )){
+			return true
+		} 
+		return false
 	}
 
 });
