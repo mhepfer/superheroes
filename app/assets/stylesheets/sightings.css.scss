@@ -27,9 +27,23 @@
 	z-index: 99;
 /*	padding: 10px;*/
 	border-radius: 5px;
+/*	overflow: scroll;*/
+	
+}
+
+.variableSightingbox {
+	position: absolute;
+	top: 90px;
+	bottom: 50px;
+	left: 10px;
+	z-index: 99;
+/*	padding: 10px;*/
+	border-radius: 5px;
 	overflow: scroll;
 }
 
 .variableSightingItem{
-	background-color: white;
+	background-color: gray;
+	border-radius: 5px;
+	margin: 5px;
 }
