@@ -21,12 +21,12 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		this._mapView = new Superhero.Views.MapsIndex({ 
 			collection: this.sightings
 		})
-		this._swapView(this._mapView)
-
-		this.map = this._mapView.initialize_map();
+		this._swapView(this._mapView);
+		this._mapView.initializeMap();
+		this.map = this._mapView.map;
 		new Superhero.Views.MapsIndexItems({ 
 			collection: this.sightings,
-			model: this.map 
+			map: this.map 
 		})
 
 		callback && callback();

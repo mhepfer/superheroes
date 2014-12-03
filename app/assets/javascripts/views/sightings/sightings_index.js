@@ -6,12 +6,7 @@ Superhero.Views.SightingsIndex = Backbone.View.extend({
 		//move to map land
 		google.maps.event.addListener(this.map, 'idle', this.render.bind(this) );
 		this.listenTo(this.collection, 'sync visibilityChanged', this.render)
-		// this.listenTo(this.collection, "visibilityChanged", this.updateVisibleSightings)
 	},
-	//only show models that are 'visible' in the index
-	updateVisibleSightings: function(){
-	},
-
 	//for list of markers which runs down the left of the map - displays marker info for points which are currently visible on the map
   template: JST['sightings/index'],
 
@@ -27,13 +22,6 @@ Superhero.Views.SightingsIndex = Backbone.View.extend({
 		var visibleSightings = []
 		
 		this.sightings.each( function(sighting){ 
-			// var latitude = sighting.get('latitude')
-   //  	var longitude = sighting.get('longitude')
-		 //  var position = new google.maps.LatLng(latitude, longitude);
-			
-			// if((that.map.getBounds().contains(position)) && that.isVisible(sighting)){
-			// 	visibleSightings.push(sighting)
-			// }
 			if(sighting.visible()){
 				visibleSightings.push(sighting);
 			}
@@ -41,16 +29,4 @@ Superhero.Views.SightingsIndex = Backbone.View.extend({
 
 		return visibleSightings
 	},
-
-	// isVisible: function(sighting) {
-	// 	var selection = $('#heroPicker').val();
-
-	// 	if ( selection === "All"){
-	// 		return true
-	// 	} else if ( parseInt( selection ) === sighting.get( 'heroId' )){
-	// 		return true
-	// 	} 
-	// 	return false
-	// }
-
 });

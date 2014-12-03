@@ -2,21 +2,21 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
 
 	template: JST['maps/indexItem'],
 
-	initialize: function(){
-		this.map = this.model
+	initialize: function(options){
+		this.map = options.map;
 		this.markers = this.collection
     this.addListener();
     this.$footer = window.$(footer)
     this.listenTo(this.collection, "add", this.placeMarker);
     this.listenTo(this.collection, "visibilityChanged", this.updateVisibleMarkers);
-    gMarkers = []
+    this.gMarkers = []
     this.placeMarkers(this.markers);
 	},
 
   //iterate through entire collection, update visibility of markers for sightings
   updateVisibleMarkers: function(){
     // alert('updating visibility');
-    gMarkers.forEach(function(gMarker){
+    this.gMarkers.forEach(function(gMarker){
       var sightingForMarker = this.collection.get(gMarker.sightingId);
       gMarker.setVisible(sightingForMarker.visible());
     }.bind(this))
@@ -53,7 +53,7 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
       icon: icons[marker.get('heroId')].icon
     });
 
-    gMarkers.push(gMarker);
+    this.gMarkers.push(gMarker);
 
     that.content = that.template({ marker: marker })
 
