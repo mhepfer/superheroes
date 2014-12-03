@@ -1,8 +1,13 @@
 Superhero.Models.Sighting = Backbone.Model.extend({
 	urlRoot: "api/sightings",
-	
+
 	initialize: function(){
-		this.visible = true;
+		this.onMap = true;
+		this.selectedHero = true;
+	},
+
+	visible: function(){
+		return this.onMap && this.selectedHero;
 	},
 
 	parse: function (response) {

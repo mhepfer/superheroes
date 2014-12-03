@@ -63,7 +63,9 @@ Superhero.Routers.Router = Backbone.Router.extend({
 	},
 
 	addHeroList: function() {
-		var heroListView = new Superhero.Views.HeroesList()
+		var heroListView = new Superhero.Views.HeroesList({
+			collection: this.sightings
+		})
 		this.$footEl.html(heroListView.render().$el)
 	},
 

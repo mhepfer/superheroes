@@ -8,9 +8,19 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
     this.addListener();
     this.$footer = window.$(footer)
     this.listenTo(this.collection, "add", this.placeMarker);
+    this.listenTo(this.collection, "visibilityChanged", this.updateVisibleMarkers);
     gMarkers = []
     this.placeMarkers(this.markers);
 	},
+
+  //iterate through entire collection, update visibility of markers for sightings
+  updateVisibleMarkers: function(){
+    // alert('updating visibility');
+    gMarkers.forEach(function(gMarker){
+      var sightingForMarker = this.collection.get(gMarker.sightingId);
+      gMarker.setVisible(sightingForMarker.visible());
+    }.bind(this))
+  },
 
   placeMarkers: function(selectedMarkers) {
 
@@ -39,6 +49,7 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
       position: position,
       map: that.map,
       heroId: heroId,
+      sightingId: marker.id,
       icon: icons[marker.get('heroId')].icon
     });
 
