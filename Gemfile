@@ -26,6 +26,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'autoprefixer-rails'
 gem 'validates_timeliness'
+gem 'newrelic_rpm'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
