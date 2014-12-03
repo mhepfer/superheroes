@@ -3,7 +3,7 @@ Superhero.Views.SightingsIndex = Backbone.View.extend({
 	initialize: function() {
 		this.map = this.model
 		this.sightings = this.collection
-		google.maps.event.addListener(this.map, 'dragend', this.render.bind(this) );
+		google.maps.event.addListener(this.map, 'dragend zoom_changed', this.render.bind(this) );
 		// this.listenTo(this.map, 'sync', this.render)
 	},
 
