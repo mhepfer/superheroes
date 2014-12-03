@@ -11,7 +11,6 @@ Superhero.Views.SightingsIndex = Backbone.View.extend({
   template: JST['sightings/index'],
 
   render: function() {
-  	console.log("render")
   	var visibleSightings = this.getSightings()
 		var renderedContent = this.template({ sightings: visibleSightings })
 		this.$el.html(renderedContent)

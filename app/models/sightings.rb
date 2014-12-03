@@ -14,6 +14,8 @@
 
 class Sightings < ActiveRecord::Base
 	validates :heroId, :latitude, :longitude, :time, :description, presence: true
+	validates_datetime :time, :on_or_before => lambda { DateTime.now }, 
+														:on_or_before_message => "Woh there time traveler. We only accept events which already happened"
 
 	belongs_to(
 		:superhero,

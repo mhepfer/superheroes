@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'autoprefixer-rails'
+gem 'validates_timeliness'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
