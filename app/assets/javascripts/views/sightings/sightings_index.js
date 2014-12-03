@@ -20,7 +20,7 @@ Superhero.Views.SightingsIndex = Backbone.View.extend({
 	getSightings: function() {
 		var that = this
 		var visibleSightings = []
-
+		
 		this.sightings.each( function(sighting){ 
 			var latitude = sighting.get('latitude')
     	var longitude = sighting.get('longitude')
