@@ -3,8 +3,8 @@ Superhero.Views.SightingsIndex = Backbone.View.extend({
 	initialize: function() {
 		this.map = this.model
 		this.sightings = this.collection
-		google.maps.event.addListener(this.map, 'dragend zoom_changed', this.render.bind(this) );
-		// this.listenTo(this.map, 'sync', this.render)
+		google.maps.event.addListener(this.map, 'bounds_changed', this.render.bind(this) );
+		this.listenTo(this.collection, 'sync', this.render)
 	},
 
 	//for list of markers which runs down the left of the map - displays marker info for points which are currently visible on the map
