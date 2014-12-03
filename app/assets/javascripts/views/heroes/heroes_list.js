@@ -24,7 +24,6 @@ Superhero.Views.HeroesList = Backbone.View.extend({
   	this.selection = $('#heroPicker').val();
 
     var that = this
-
     if(this.selection !== "All"){
     	this.selection = parseInt( this.selection )
       _.each( gMarkers, function(gMarker) {

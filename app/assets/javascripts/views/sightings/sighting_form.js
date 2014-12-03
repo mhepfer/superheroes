@@ -10,7 +10,14 @@ Superhero.Views.SightingForm = Backbone.View.extend({
 	template: JST["sightings/form"],
 
 	events: {
-		"click button": "submit"
+		"click button": "submit",
+		"click .back-link": 'closeForm'
+	},
+
+	closeForm: function(event){
+		event.preventDefault();
+		Backbone.history.navigate("#", {trigger: false});
+		this.remove();
 	},
 
 	render: function() {
