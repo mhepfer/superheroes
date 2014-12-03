@@ -4,6 +4,7 @@ Superhero.Views.HeroesList = Backbone.View.extend({
 
   initialize: function() {
   	this.listenTo(Superhero.Collections.heroes, "sync", this.render);
+    this.listenTo(this.collection, "sync", this.filterMarkers)
   },
 
   events:{
@@ -19,7 +20,11 @@ Superhero.Views.HeroesList = Backbone.View.extend({
   },
 
   updateVisibility: function(sighting){
-    sighting.selectedHero = sighting.get('heroId') == this.selection;
+    if(this.selection === "All"){
+      sighting.selectedHero = true
+    } else {
+      sighting.selectedHero = sighting.get('heroId') == this.selection;
+    }
   },
 
   filterMarkers: function() {
