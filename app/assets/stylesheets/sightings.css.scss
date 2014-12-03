@@ -22,8 +22,14 @@
 	background-color: rgba(54,76,90, 1);
 	position: absolute;
 	top: 90px;
+	bottom: 50px;
 	left: 10px;
 	z-index: 99;
 /*	padding: 10px;*/
 	border-radius: 5px;
+	overflow: scroll;
+}
+
+.variableSightingItem{
+	background-color: white;
 }
