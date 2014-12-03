@@ -10,10 +10,10 @@ class Api::SightingsController < ApplicationController
 
 	def create
 		@sighting = Sightings.new(sighting_params)
-		if @sighting.save!
+		if @sighting.save
 			render 'show'
 		else
-			render json: @sighting.errors.full_messages
+			render json: @sighting.errors.full_messages, status: 422
 		end
 	end
 

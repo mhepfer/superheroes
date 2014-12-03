@@ -1,7 +1,7 @@
 
 	<form class="addSighting" role="form">
 		<div class="errors" id="errors"></div>
-		
+
 		<div class="form-group">
 			<label for="heroId">Hero Name:</label><br>
 			<select name="heroId">
@@ -24,12 +24,12 @@
 
 	<div class="form-group">
 		<label for="longitude">Longitude:</label><br>
-		<input type='text' name='longitude' id='longitude' value='<%= sighting.escape('longitude') %>'><br>
+		<input type='number' name='longitude' id='longitude' value='<%= sighting.escape('longitude') %>'><br>
 	</div>
 
 	<div class="form-group">
 		<label for="latitude">Latitude:</label><br>
-		<input type='text' name='latitude' id='latitude' value='<%= sighting.escape('latitude') %>'><br>
+		<input type='number' name='latitude' id='latitude' value='<%= sighting.escape('latitude') %>'><br>
 	</div>
 
 	<!-- <label for="pac-input">Location:</label><br>
@@ -37,5 +37,5 @@
 
 	<button id="createSighting">Submit</button>
 
-	<a href='#/'>Back</a>
+	<a href='#'>Back</a>
 	</form>

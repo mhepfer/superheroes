@@ -1,0 +1,8 @@
+
+<% _.each(sightings, function(sighting){ %>
+	<ul>
+			<li><%=sighting.superhero.escape("name")%></li>
+			<li><%=sighting.escape("time")%></li>
+			<li><%=sighting.escape("description")%></li>
+	</ul>
+<% }) %>

@@ -8,10 +8,10 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
     this.addListener();
     this.$footer = window.$(footer)
     this.listenTo(this.collection, "add", this.placeMarker);
-    this.placeMarkers(this.markers);
     gMarkers = []
+    this.placeMarkers(this.markers);
 	},
-  
+
   placeMarkers: function(selectedMarkers) {
 
   	var that = this; 

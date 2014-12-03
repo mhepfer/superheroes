@@ -11,12 +11,15 @@ Superhero.Views.HeroesList = Backbone.View.extend({
   },
 
   render: function() {
-  	var newTemplate = this.template({ heroes: Superhero.Collections.heroes });
+  	var newTemplate = this.template({ 
+      heroes: Superhero.Collections.heroes 
+    });
   	this.$el.html(newTemplate);
   	return this
   },
 
   filterMarkers: function() {
+    console.log('triggered change select');
 
   	this.selection = $('#heroPicker').val();
 
