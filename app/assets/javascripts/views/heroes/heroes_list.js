@@ -8,7 +8,7 @@ Superhero.Views.HeroesList = Backbone.View.extend({
   },
 
   events:{
-    "change select": "filterMarkers"
+    "change select": "filterMarkers",
   },
 
   render: function() {
