@@ -33,7 +33,7 @@
 
 .variableSightingbox {
 	position: absolute;
-	top: 90px;
+	top: 30px;
 	bottom: 50px;
 	left: 10px;
 	z-index: 99;
@@ -46,4 +46,10 @@
 	background-color: gray;
 	border-radius: 5px;
 	margin: 5px;
+}
+
+.sightingIndexBack{
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
 }
