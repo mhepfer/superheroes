@@ -71,6 +71,7 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		if(this.currentView){
 			this.currentView.remove()
 			this.$formEl.empty()
+			this.$sightingsEl.empty()
 		}
 		this.$rootEl.html(view.render().$el)
 		this.currentView = view
