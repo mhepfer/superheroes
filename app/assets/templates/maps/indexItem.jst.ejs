@@ -1,4 +1,6 @@
 <div class="info_content">
-  <h3>Superhero: <%= marker.superhero.get("name") %></h3>
+  <h3>Superhero:</h3>
+  <a href='#/heroes/<%= marker.superhero.id%>'>
+  <%= marker.superhero.get("name") %></a>
   <p>Summary: <%= marker.get('description')%></p>
 </div>

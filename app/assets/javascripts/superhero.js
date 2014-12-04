@@ -8,7 +8,8 @@ window.Superhero = {
     	$rootEl: $(content),
       $formEl: $(newSightingForm),
       $footEl: $(footer),
-      $sightingsEl: $(sightingsIndex)
+      $sightingsEl: $(sightingsIndex),
+      $heroEl: $(heroView)
     })
     Backbone.history.start();
   }
