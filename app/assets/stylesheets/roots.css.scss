@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#heading {
+/*#heading {
 	text-align: center;
 	color: #00FEFF;
 	line-height: 75px;
@@ -11,6 +11,12 @@
 	height: 60px;
 	padding: 0;
 	z-index: 50;
+}*/
+
+h1 {
+	z-index: 10;
+	position: absolute;
+	left: 100px;
 }
 
 #footer {
