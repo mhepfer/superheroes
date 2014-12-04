@@ -12,15 +12,11 @@
 
 #heroFormBackground {
 	background-color: rgba(54,76,90,0.9);
-	position: absolute;
-	top: 90px;
-	right: 100px;
+	position: fixed;
+	right: 290px;
+	bottom: 50px;
 	z-index: 90;
 	border-radius: 5px;
-}
-
-#heroForm {
-	color: black;
 }
 
 .heroSightingBox {
