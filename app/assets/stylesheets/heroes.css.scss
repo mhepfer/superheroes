@@ -9,3 +9,16 @@
 	width: 400px;
 	z-index: 95;
 }
+
+#heroFormBackground {
+	background-color: rgba(54,76,90,0.9);
+	position: absolute;
+	top: 90px;
+	right: 100px;
+	z-index: 90;
+	border-radius: 5px;
+}
+
+#heroForm {
+	color: black;
+}

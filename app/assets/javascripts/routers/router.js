@@ -6,6 +6,7 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		this.$footEl = options.$footEl;
 		this.$sightingsEl = options.$sightingsEl;
 		this.$heroEl = options.$heroEl;
+		this.$heroFormEl = options.$heroFormEl;
 		this.sightings = new Superhero.Collections.Sightings()
 
 		this.addHeroList()
@@ -15,7 +16,8 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		"":"newMap",
 		"sightings/new": "newSighting",
 		"sightings/index": "sightingsIndex",
-		"heroes/:id": "heroShow"
+		"heroes/:id": "heroShow",
+		"heroes/new": "newHero"
 	},
 
 	newMap: function(callback) {
@@ -49,6 +51,19 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		})
 
 		this.$formEl.html(sightingView.render().$el);
+	},
+
+	newHero: function() {
+		if (!this._mapView) {
+			this.newMap(this.newSighting.bind(this));
+			return;
+		}
+		this.hero = new Superhero.Models.Hero()
+		var heroFormView = new Superhero.Views.HeroForm({
+			model: this.hero
+		})
+
+		this.$heroFormEl.html(heroFormView.render().$el)
 	},
 
 	sightingsIndex: function() {

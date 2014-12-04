@@ -1,5 +1,13 @@
 
 <h3><%=hero.escape('name')%></h3>
-<p><%=hero.escape('bio')%></p>
+<p>Bio: <%=hero.escape('bio')%></p>
+<h3>Sightings:</h3>
+
+<%_.each(sightings, function(sighting){ %>
+	<ul>
+		<li>Time of sightings: <%= sighting.time %> </li>
+		<li>Description: <%= sighting.description %>
+	</ul>
+<% }) %>
 
 <a class="close-hero-show" href='#'>Close Form</a>

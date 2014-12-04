@@ -12,9 +12,10 @@ Superhero.Views.HeroShow = Backbone.View.extend({
 	},
 
 	render: function() {
-		// var sightings = this.findSightings(this.collection)
+		var heroSightings = this.model.sightings.attributes
 		var renderedContent = this.template({ 
 			hero: this.model,
+			sightings: heroSightings
 	  })
   	this.$el.html(renderedContent)
   	return this

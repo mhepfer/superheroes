@@ -8,7 +8,16 @@ class Api::HeroesController < ApplicationController
 		render :show
 	end
 
-	def params
+	def create
+		@hero = Heroes.new(hero_params)
+		if @hero.save
+			render 'show'
+		else
+			render json: @hero.errors.full_messages, status: 422
+		end
+	end
+
+	def hero_params
 		params.require(:heroes).permit(:name, :bio)
 	end
 
