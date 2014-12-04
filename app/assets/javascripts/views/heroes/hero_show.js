@@ -1,6 +1,10 @@
 Superhero.Views.HeroShow = Backbone.View.extend({
 	template: JST['heros/show'],
 
+	initialize: function () {
+		this.listenTo(this.model, 'sync', this.render);
+	},
+
 	events: {
 			"click .close-hero-show": 'closeForm'
 	},
@@ -12,7 +16,7 @@ Superhero.Views.HeroShow = Backbone.View.extend({
 	},
 
 	render: function() {
-		var heroSightings = this.model.sightings.attributes
+		var heroSightings = this.model.sightings
 		var renderedContent = this.template({ 
 			hero: this.model,
 			sightings: heroSightings

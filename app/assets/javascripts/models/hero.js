@@ -3,7 +3,7 @@ Superhero.Models.Hero = Backbone.Model.extend({
 
 	parse: function (response) {
 		if (response.sightings) {
-			this.sightings = new Superhero.Models.Sighting(response.sightings);
+			this.sightings = new Superhero.Collections.Sightings(response.sightings);
 			delete response.sightings;
 		}
 		return response;

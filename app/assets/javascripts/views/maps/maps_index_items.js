@@ -41,7 +41,8 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
       2: {icon: "http://seeclickfix.com/files/user_images/0000/1525/Batman_logo_small_square.jpg"},
       3: {icon: "http://www.creativecrash.com/system/photos/000/078/191/78191/activity/superman-logo-t-shirt-logo.gif?1264253040"},
       4: {icon: "http://www.adiumxtras.com/images/thumbs/the_flash_duck_1_16711_6170_thumb.png"},
-      5: {icon: "http://wscont2.apps.microsoft.com/winstore/1x/7ddfab4e-0dbc-476d-9dea-43abaa936af4/Icon.343718.png"}
+      5: {icon: "http://wscont2.apps.microsoft.com/winstore/1x/7ddfab4e-0dbc-476d-9dea-43abaa936af4/Icon.343718.png"},
+      6: {icon: "http://images.yuku.com.s3.amazonaws.com/image/gif/1b6267e5b6281abc8621a58e4fc706dc44f9b7b5_r.gif"}
     }
 
     var position = new google.maps.LatLng(lat, longitude);

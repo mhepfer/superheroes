@@ -1,4 +1,5 @@
 class Api::HeroesController < ApplicationController
+
 	def index
 		@heroes = Heroes.all
 	end
@@ -18,7 +19,11 @@ class Api::HeroesController < ApplicationController
 	end
 
 	def hero_params
-		params.require(:heroes).permit(:name, :bio)
-	end
+		if params[:hero]
+			params.require(:hero).permit(:name, :bio)
+		else
+			params.require(:heroes).permit(:name, :bio)
+		end
 
+	end
 end

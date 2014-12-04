@@ -4,10 +4,10 @@
 <h3>Sightings:</h3>
 
 <div class='heroSightingbox'>
-<%_.each(sightings, function(sighting){ %>
+<% sightings && sightings.each(function(sighting){ %>
 	<ul class='variableSightingItem'>
-		<li>Time of sightings: <%= sighting.time %> </li>
-		<li>Description: <%= sighting.description %>
+		<li>Time of sightings: <%= sighting.get('time') %> </li>
+		<li>Description: <%= sighting.get('description') %>
 	</ul>
 <% }) %>
 </div>

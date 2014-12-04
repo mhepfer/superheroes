@@ -36,7 +36,6 @@ Superhero.Views.HeroForm = Backbone.View.extend({
 		this.model.set(attrs);
 
 		function success() {
-			console.log('success')
 			Backbone.history.navigate( "", { trigger: false })
 			that.remove();
 		}
@@ -57,7 +56,7 @@ Superhero.Views.HeroForm = Backbone.View.extend({
 				{ 
 					success: function(model){
 									 success(); 
-									 that.collection.add(model);
+									 that.heroes.add(that.model);
 									},
 					error: errors.bind(this)
 				}
