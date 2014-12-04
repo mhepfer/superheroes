@@ -6,16 +6,12 @@
 
 #sightingFormBackground {
 	background-color: rgba(54,76,90,0.9);
-	position: absolute;
+	/*position: absolute;
 	top: 90px;
-	right: 10px;
+	right: 10px;*/
 	z-index: 90;
 /*	padding: 10px;*/
 	border-radius: 5px;
-}
-
-#newSightingForm {
-	color: black;
 }
 
 #sightingsIndex {
@@ -25,9 +21,7 @@
 	bottom: 50px;
 	left: 10px;
 	z-index: 90;
-/*	padding: 10px;*/
 	border-radius: 5px;
-/*	overflow: scroll;*/
 	
 }
 
@@ -37,7 +31,6 @@
 	bottom: 50px;
 	left: 10px;
 	z-index: 90;
-/*	padding: 10px;*/
 	border-radius: 5px;
 	overflow: scroll;
 }
