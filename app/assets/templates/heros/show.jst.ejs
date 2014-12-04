@@ -3,11 +3,13 @@
 <p>Bio: <%=hero.escape('bio')%></p>
 <h3>Sightings:</h3>
 
+<div class='heroSightingbox'>
 <%_.each(sightings, function(sighting){ %>
-	<ul>
+	<ul class='variableSightingItem'>
 		<li>Time of sightings: <%= sighting.time %> </li>
 		<li>Description: <%= sighting.description %>
 	</ul>
 <% }) %>
+</div>
 
 <a class="close-hero-show" href='#'>Close Form</a>
