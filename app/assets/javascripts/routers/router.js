@@ -3,7 +3,7 @@ Superhero.Routers.Router = Backbone.Router.extend({
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl;
 		this.$formEl = options.$formEl;
-		this.$footEl = options.$footEl;
+		this.$filterEl = options.$filterEl;
 		this.$sightingsEl = options.$sightingsEl;
 		this.$heroEl = options.$heroEl;
 		this.$heroFormEl = options.$heroFormEl;
@@ -83,7 +83,7 @@ Superhero.Routers.Router = Backbone.Router.extend({
 		var heroListView = new Superhero.Views.HeroesList({
 			collection: this.sightings
 		})
-		this.$footEl.html(heroListView.render().$el)
+		this.$filterEl.html(heroListView.render().$el)
 	},
 
 	heroShow: function(id) {

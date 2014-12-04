@@ -7,7 +7,7 @@ window.Superhero = {
     new Superhero.Routers.Router({
     	$rootEl: $(content),
       $formEl: $(newSightingForm),
-      $footEl: $(footer),
+      $filterEl: $(heroFilter),
       $sightingsEl: $(sightingsIndex),
       $heroEl: $(heroView),
       $heroFormEl: $(heroForm)

@@ -6,7 +6,6 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
 		this.map = options.map;
 		this.markers = this.collection
     this.addListener();
-    this.$footer = window.$(footer)
     this.listenTo(this.collection, "add", this.placeMarker);
     this.listenTo(this.collection, "visibilityChanged", this.updateVisibleMarkers);
     this.gMarkers = []
