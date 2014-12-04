@@ -27,6 +27,7 @@ gem 'font-awesome-rails'
 gem 'autoprefixer-rails'
 gem 'validates_timeliness'
 gem 'newrelic_rpm'
+gem 'filepicker-rails'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
