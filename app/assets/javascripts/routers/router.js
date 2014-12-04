@@ -72,7 +72,11 @@ Superhero.Routers.Router = Backbone.Router.extend({
 	},
 
 	heroShow: function(id) {
-		var hero = Superhero.Collections.heroes.get(id)
+		if (!this._mapView) {
+			this.newMap(this.heroShow.bind(this));
+			return;
+		}
+		var hero = Superhero.Collections.heroes.getOrFetch(id)
 		var heroView = new Superhero.Views.HeroShow({ 
 			model: hero,
 			collection: this.sightings
