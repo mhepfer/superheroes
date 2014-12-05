@@ -44,7 +44,18 @@
 	margin: 10px;
 }
 
-.heroSightingBox {
-	height: 100px;
+.heroSightingbox {
+	z-index: 90;
+	border-radius: 5px;
 	overflow: scroll;
+	margin-bottom: 20px;
+	height: 200px;
+}
+
+.heroSightingItem {
+	background-color: rgb(54, 76, 90);
+	color: rgb(147, 161, 170);
+	border-radius: 5px;
+	margin: 5px;
+	padding-right: 10px;
 }

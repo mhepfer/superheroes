@@ -7,10 +7,10 @@
 
 	<div class='heroSightingbox'>
 	<% sightings && sightings.each(function(sighting){ %>
-		<ul class='variableSightingItem'>
-			<li>Time of sightings: <%= sighting.get('time') %> </li>
-			<li>Description: <%= sighting.get('description') %>
-		</ul>
+		<div class='heroSightingItem'>
+			<p>Time of sightings <br> <%= sighting.get('time') %> </p>
+			<p>Description <br> <%= sighting.get('description') %></p>
+		</div>
 	<% }) %>
 	</div>
 
