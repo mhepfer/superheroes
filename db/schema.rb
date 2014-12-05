@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205002700) do
+ActiveRecord::Schema.define(version: 20141205172412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "heroes", force: true do |t|
-    t.text     "name"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "bio"
+    t.text     "bio"
     t.string   "filepicker_url_icon"
     t.string   "filepicker_url"
   end
