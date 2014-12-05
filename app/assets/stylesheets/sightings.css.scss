@@ -18,15 +18,13 @@
 }
 
 #sightingsIndex {
-	background-color: rgba(54,76,90, 1);
+	background-color: rgba(54,76,90, 0.9);
 	position: fixed;
 	bottom: 50px;
-	left: 10px;
 	z-index: 90;
 	border-radius: 5px;
 	margin: 10px;
 	padding: 10px;
-	
 }
 
 .variableSightingbox {
@@ -37,7 +35,8 @@
 }
 
 .variableSightingItem{
-	background-color: gray;
+	background-color: rgb(8, 48, 75);
+	color: rgb(147, 161, 170);
 	border-radius: 5px;
 	margin: 5px;
 	width: 250px;

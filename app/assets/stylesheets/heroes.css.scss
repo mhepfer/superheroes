@@ -3,11 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #heroView {
-	background-color: rgba(54,76,90, 1);
+	background-color: rgba(54,76,90, 0.9);
 	position: absolute;
-	left: 32%;
-	width: 400px;
 	z-index: 95;
+	width: 500px;
+	left: 50%;
+	top: 50%;
+	margin: -250px 0 0 -250px;
+	border-radius: 5px;
+}
+
+#hero-show-contents {
+	background: #08304B;
+	border-radius: 5px;
+	color: rgb(27, 106, 120);
+	margin: 10px;
+}
+
+#hero-icon {
+	display: inline-block;
+	margin-left: 20px;
+	height: 100px;
+	width: auto;
+}
+
+#hero-show-contents h3 {
+	display: inline-block;
 }
 
 #heroFormBackground {

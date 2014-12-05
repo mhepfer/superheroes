@@ -1,15 +1,18 @@
+<div id="hero-show-contents">
+	<img id="hero-icon" src="<%=hero.escape('filepicker_url_icon')%>">
+	<h3><%=hero.escape('name')%></h3>
+	<h4>Bio</h4>
+	<p><%=hero.escape('bio')%></p>
+	<h4>Sightings</h4>
 
-<h3><%=hero.escape('name')%></h3>
-<p>Bio: <%=hero.escape('bio')%></p>
-<h3>Sightings:</h3>
-
-<div class='heroSightingbox'>
-<% sightings && sightings.each(function(sighting){ %>
-	<ul class='variableSightingItem'>
-		<li>Time of sightings: <%= sighting.get('time') %> </li>
-		<li>Description: <%= sighting.get('description') %>
-	</ul>
-<% }) %>
-</div>
+	<div class='heroSightingbox'>
+	<% sightings && sightings.each(function(sighting){ %>
+		<ul class='variableSightingItem'>
+			<li>Time of sightings: <%= sighting.get('time') %> </li>
+			<li>Description: <%= sighting.get('description') %>
+		</ul>
+	<% }) %>
+	</div>
 
 <a class="close-hero-show" href='#'>Close Form</a>
+</div>
