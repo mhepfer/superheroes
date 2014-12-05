@@ -1,8 +1,9 @@
 <% if (hero.escape("filepicker_url_icon") === "") {%>
-	<button id="filepicker-button">Add Icon</button>
+	<button id="filepicker-button" class="btn btn-primary">Add Icon</button>
 <% } else { %>
 	<h6>Image Uploaded</h6>
 <% } %>
+
 
 <form class="addHero" role="form">
 		<div class="errors" id="errors"></div>
@@ -18,7 +19,7 @@
 		<textarea name='bio' id='bio' value='<%= hero.escape('bio') %>'><%= hero.escape('bio') %></textarea><br>
 	</div>
 
-	<button id="createSighting">Submit</button>
+	<button id="createSighting" class="btn btn-primary">Submit</button>
 
 	<a class="hero-back-link" href='#'>Close Form</a>
 </form>

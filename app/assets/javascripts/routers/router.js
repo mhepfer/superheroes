@@ -14,9 +14,9 @@ Superhero.Routers.Router = Backbone.Router.extend({
 
 	routes:{
 		"":"newMap",
+		"heroes/new": "newHero",
 		"sightings/new": "newSighting",
 		"sightings/index": "sightingsIndex",
-		"heroes/new": "newHero",
 		"heroes/:id": "heroShow"
 	},
 
@@ -55,7 +55,7 @@ Superhero.Routers.Router = Backbone.Router.extend({
 
 	newHero: function() {
 		if (!this._mapView) {
-			this.newMap(this.newSighting.bind(this));
+			this.newMap(this.newHero.bind(this));
 			return;
 		}
 		this.hero = new Superhero.Models.Hero()
