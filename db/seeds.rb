@@ -10,27 +10,27 @@ heroes = [
 	[ 
 		"Captain America",
 		"In World War II patriotic solider Steve Rogers recipient of the 'Super Soldier Serum' became the living symbol of freedom, Captain America. Left for dead while frozen in ice, the star-spangled hero with an indestructible shield awoke years later to continue his never-ending battle for liberty.",
-		"https://www.filepicker.io/api/file/y9JCRJkRLagmr0sbkkPg"
+		"https://www.filepicker.io/api/file/mxvyX0f0Sb6e7eFXe6D6"
 	],
 	[
 		"Batman",
 		"As a boy, Bruce Wayne's parents were mugged and killed. He swore vengence, traveling the world to turn himself into the ultimate crime fighter. Today he is Gotham's Dark Knight.",
-		"https://www.filepicker.io/api/file/XGqjKmCuSLiYwhcPw10B"
+		"https://www.filepicker.io/api/file/77Pl1y1vQpYyYygaWjaL"
 	],
 	[
 		"Superman",
 		"From planet Krypton, Superman's parents sent him to Earth as a baby. On Earth, Superman has many superpowers including super strength, speed, hearing; heat and xray vision; and flight. He uses these powers to fight injustice throughout the world.",
-		"https://www.filepicker.io/api/file/q3FZOMBBRbaCjrGtAPvY"
+		"https://www.filepicker.io/api/file/98FTtcMXRefc84dJ12LU"
 	],
 	[
 		"The Flash",
 		"The fastest man alive. Flash uses his super speed to protect the world from impending doom.",
-		"https://www.filepicker.io/api/file/UPHOnmrmTkGtUIPw0vRc"
+		"https://www.filepicker.io/api/file/nVCgRyLZT6GDte55bxVQ"
 	],
 	[
 		"Iron Man",
 		"Billionaire genius, this playboy fights evil doers wearing a flying supersuit.",
-		"https://www.filepicker.io/api/file/a1IUXXeQQtKPSUkY5IC3"
+		"https://www.filepicker.io/api/file/5TaegwTESWuyN4grEQUy"
 	]
 ]
 
