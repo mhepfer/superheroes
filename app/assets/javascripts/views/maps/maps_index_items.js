@@ -35,6 +35,20 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
     var lat = marker.get('latitude')
     var longitude = marker.get('longitude')
     var heroId = marker.get('heroId')
+
+    var url = marker.superhero.get('filepicker_url_icon')
+
+    if(url === null){
+      url = 'http://www.officialavengerscostumes.com/~/media/products/oc/captain-america-costumes/captain-america-costume-accessories/8818346-captain-america-shield-000.ashx?w=50&h=50&bc=ffffff'
+    }
+
+    var icon = {
+            url: url, //url
+            scaledSize: new google.maps.Size(20, 20), // size
+            origin: new google.maps.Point(0,0), // origin
+            // anchor: new google.maps.Point(anchor_left, anchor_top)
+            } //anchor 
+            
     var icons = {
       1: {icon: "http://www.officialavengerscostumes.com/~/media/products/oc/captain-america-costumes/captain-america-costume-accessories/8818346-captain-america-shield-000.ashx?w=50&h=50&bc=ffffff"},
       2: {icon: "http://seeclickfix.com/files/user_images/0000/1525/Batman_logo_small_square.jpg"},
@@ -50,7 +64,7 @@ Superhero.Views.MapsIndexItems = Backbone.View.extend({
       map: that.map,
       heroId: heroId,
       sightingId: marker.id,
-      icon: icons[marker.get('heroId')].icon
+      icon: icon
     });
 
     this.gMarkers.push(gMarker);
