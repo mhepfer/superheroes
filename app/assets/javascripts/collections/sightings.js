@@ -4,7 +4,7 @@ Superhero.Collections.Sightings = Backbone.Collection.extend({
   model: Superhero.Models.Sighting,
 
   comparator: function(sighting) {
-  	return -sighting.get('time');
+  	return sighting.get('time');
   }
 
 });
