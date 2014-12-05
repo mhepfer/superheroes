@@ -4,14 +4,15 @@ Superhero.Views.HeroForm = Backbone.View.extend({
 	initialize: function(options) {
 		this.model = options.model,
 		this.heroes = Superhero.Collections.heroes
-		// this.listenTo(Superhero.Collections.heroes, "sync", this.render)
+		this.listenTo(this.model, "change", this.render)
 	},
 
 	template: JST["heros/form"],
 
 	events: {
-		"click button": "submit",
-		"click .hero-back-link": 'closeForm'
+		"click #createSighting": "submit",
+		"click .hero-back-link": 'closeForm',
+		"click #filepicker-button": 'openFilePicker'
 	},
 
 	closeForm: function(event){
@@ -27,6 +28,17 @@ Superhero.Views.HeroForm = Backbone.View.extend({
 		})
 		this.$el.html(renderedContent)
 		return this
+	},
+
+	openFilePicker: function(event) {
+		var that = this
+		event.preventDefault()
+		filepicker.pick(
+		  function(Blob){
+		    console.log(Blob.url);
+		    that.model.set('filepicker_url_icon', Blob.url)
+		  }
+		);
 	},
 
 

@@ -20,9 +20,9 @@ class Api::HeroesController < ApplicationController
 
 	def hero_params
 		if params[:hero]
-			params.require(:hero).permit(:name, :bio)
+			params.require(:hero).permit(:name, :bio, :filepicker_url_icon)
 		else
-			params.require(:heroes).permit(:name, :bio)
+			params.require(:heroes).permit(:name, :bio, :filepicker_url_icon)
 		end
 
 	end

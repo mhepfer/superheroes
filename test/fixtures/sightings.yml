@@ -2,14 +2,15 @@
 #
 # Table name: sightings
 #
-#  id          :integer          not null, primary key
-#  heroId      :integer          not null
-#  description :text             not null
-#  created_at  :datetime
-#  updated_at  :datetime
-#  latitude    :float            not null
-#  longitude   :float            not null
-#  time        :datetime
+#  id             :integer          not null, primary key
+#  heroId         :integer          not null
+#  description    :text             not null
+#  created_at     :datetime
+#  updated_at     :datetime
+#  latitude       :float            not null
+#  longitude      :float            not null
+#  time           :datetime
+#  filepicker_url :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

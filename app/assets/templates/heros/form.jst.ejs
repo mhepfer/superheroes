@@ -1,3 +1,8 @@
+<% if (hero.escape("filepicker_url_icon") === "") {%>
+	<button id="filepicker-button">Add Icon</button>
+<% } else { %>
+	<h6>Image Uploaded</h6>
+<% } %>
 
 <form class="addHero" role="form">
 		<div class="errors" id="errors"></div>
@@ -13,14 +18,6 @@
 		<textarea name='bio' id='bio' value='<%= hero.escape('bio') %>'><%= hero.escape('bio') %></textarea><br>
 	</div>
 
-	<input
-		type="filepicker"
-		data-fp-mimetype="image/*"
-		name="icon_filepicker_url"
-  	data-fp-button-text="Choose Image for Map"
-  	data-fp-button-class="btn btn-default"> <!-- Button CSS classes go here -->	
-
-  <br>
 	<button id="createSighting">Submit</button>
 
 	<a class="hero-back-link" href='#'>Close Form</a>
