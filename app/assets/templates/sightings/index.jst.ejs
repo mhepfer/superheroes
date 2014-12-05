@@ -1,11 +1,12 @@
 <h3>Total Sightings: <%=sightings.length%></h3>
 	<div class= "variableSightingbox"> 
 		<% _.each(sightings, function(sighting){ %>
-			<ul class="variableSightingItem">
-					<li><%=sighting.superhero.escape("name")%></li>
-					<li><%=sighting.escape("time")%></li>
-					<li><%=sighting.escape("description")%></li>
-			</ul>
+			<div class="variableSightingItem">
+					<h8><%=sighting.superhero.escape("name")%></h8>
+					<br>
+					<h8>Time</h8><p><%=sighting.escape("time")%></p>
+					<h8>Description</h8><p><%=sighting.escape("description")%></p>
+			</div>
 		<% }) %>
 	</div>
 <a class="index-back-link" href='#'>Close Index</a>
